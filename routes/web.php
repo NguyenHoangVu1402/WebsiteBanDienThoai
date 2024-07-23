@@ -5,6 +5,7 @@ use App\Http\Controllers\ChiTietSanPhamController;
 use App\Http\Controllers\GioHangController;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TaiKhoanController;
 use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,9 @@ Route::get('/', [TrangChuController::class, 'index_user']);
 Route::get('/Admin_Admin', [TrangChuController::class, 'index_admin']);
 Route::get('/chi_tiet_san_pham', [ChiTietSanPhamController::class, 'index']);
 Route::get('/gio_hang', [GioHangController::class, 'index']);
+Route::get('/login', [TaiKhoanController::class, 'dangnhap'])->name('dangNhap');
+Route::get('/register', [TaiKhoanController::class, 'dangki'])->name('dangKi');
+
 
 
 Route::prefix('categories')->group(function (){
@@ -63,6 +67,18 @@ Route::prefix('menus')->group(function (){
     Route::post('/store',[
         'as' => 'menus.store',
         'uses' => 'App\Http\Controllers\MenuController@store'
+    ]);
+    Route::get('/edit/{id}',[
+        'as' => 'menus.edit',
+        'uses' => 'App\Http\Controllers\MenuController@edit'
+    ]);
+    Route::post('/update/{id}',[
+        'as' => 'menus.update',
+        'uses' => 'App\Http\Controllers\MenuController@update'
+    ]);
+    Route::get('/delete/{id}',[
+        'as' => 'menus.delete',
+        'uses' => 'App\Http\Controllers\MenuController@delete'
     ]);
     
 });

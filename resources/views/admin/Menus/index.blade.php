@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{route('menus.create')}}" class="btn btn-success float-right m-2">Thêm danh mục</a>
+                    <a href="{{route('menus.create')}}" class="btn btn-success float-right m-2">Thêm menu</a>
                 </div>
             </div>
             <div class="row">
@@ -25,25 +25,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach($categories as $category)
+                                @foreach($menus as $menu)
                                 <tr class="table-active">
-                                    <td>{{$category->id}}</td>
-                                    <td>{{$category->name}}</td>
+                                    <td>{{$menu->id}}</td>
+                                    <td>{{$menu->name}}</td>
                                     
                                     <td>
-                                        <a href="{{route('categories.edit',  ['id'=>$category->id])}}" class="btn btn-success">Chỉnh sửa</a>
-                                        <a href="{{route('categories.delete',  ['id'=>$category->id])}}" class="btn btn-danger">Xóa</a>
+                                        <a href="{{route('menus.edit',  ['id'=>$menu->id])}}" class="btn btn-success">Chỉnh sửa</a>
+                                        <a href="{{route('menus.delete',  ['id'=>$menu->id])}}" class="btn btn-danger">Xóa</a>
                                     </td>
                                 </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-                {{-- <div class="card-body table-border-style">
-                    {{ $categories->links('pagination::bootstrap-4') }}
-                </div> --}}
+                <div class="card-body table-border-style">
+                    {{ $menus->links('pagination::bootstrap-4') }}
+                </div>
         </div>
     </div>
 </div>
