@@ -9,4 +9,5 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Menu extends Model
 {
     use HasFactory,SoftDeletes;
+    protected $fillable = ['name','parent_id','slug'];
 }
